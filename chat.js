@@ -99,14 +99,20 @@ async function handleAuthorizationResponse() {
 // Fetch heart rate data
 async function fetchHeartRateData(accessToken) {
     const fitbitUrl = "https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json";
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
-    const response = await fetch(proxyUrl + fitbitUrl, {
+    const response = await fetch(fitbitUrl, {
         headers: {
             Authorization: `Bearer ${accessToken}`,
         },
     });
 
     const data = await response.json();
+
+    // Use postMessage to send data to parent (Unity)
+    if (window.opener) {
+        // This will send the data to the parent window (Unity)
+        window.opener.postMessage({ data: data }, "*");
+    }
+
     document.getElementById("status").innerText = JSON.stringify(data, null, 2);
 }
