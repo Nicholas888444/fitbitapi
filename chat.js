@@ -108,8 +108,8 @@ async function fetchHeartRateData(accessToken) {
 
     const data = await response.json();
 
-    // Store the fetched data in a global variable that Unity can access
-    window.fitbitData = data;
+    // Save the Fitbit data to localStorage
+    localStorage.setItem("fitbit_data", JSON.stringify(data));
 
-    document.getElementById("status").innerText = JSON.stringify(data, null, 2);
+    document.getElementById("status").innerText = "Fitbit data saved to localStorage.";
 }
