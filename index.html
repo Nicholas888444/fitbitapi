@@ -11,23 +11,4 @@
     <pre id="status">Click the button above to get started.</pre> <!-- Displays output -->
     <script src="chat.js"></script>
 </body>
-
-<script>
-  // Listen for messages from the JavaScript
-  window.addEventListener("message", function(event) {
-    if (event.origin !== "https://nicholas888444.github.io") {
-      // You can also add other checks for security
-      return;
-    }
-
-    // Extract the data sent from the JavaScript
-    const data = event.data;
-    
-    // Send the data to Unity via SendMessage
-    if (data) {
-      SendMessage("FitbitDataReceiver", "ReceiveData", JSON.stringify(data));
-    }
-  });
-</script>
-    
 </html>
