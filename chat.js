@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Configuration
 const CLIENT_ID = "23PZMC"; // Replace with your Fitbit client ID
-const REDIRECT_URI = "http://localhost"; // Replace with your redirect URI
+const REDIRECT_URI = "https://nicholas888444.github.io/fitbitapi/index.html"; // Replace with your redirect URI
 
 // Generate a random code verifier
 function generateCodeVerifier() {
