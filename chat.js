@@ -99,7 +99,7 @@ async function handleAuthorizationResponse() {
 // Fetch heart rate data
 async function fetchHeartRateData(accessToken) {
     const fitbitUrl = "https://api.fitbit.com/1/user/-/activities/heart/date/today/1d.json";
-    const proxyUrl = "https://cors-anywhere.herokuapp.com/corsdemo";
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
     const response = await fetch(proxyUrl + fitbitUrl, {
         headers: {
