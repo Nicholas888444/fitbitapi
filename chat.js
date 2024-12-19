@@ -112,4 +112,6 @@ async function fetchHeartRateData(accessToken) {
     localStorage.setItem("fitbit_data", JSON.stringify(data));
 
     document.getElementById("status").innerText = "Fitbit data saved to localStorage.";
+    console.log(data);
+    
 }
